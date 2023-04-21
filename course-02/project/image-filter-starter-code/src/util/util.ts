@@ -19,7 +19,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
 
       // Read the buffer, filter and save file locally
       const photo = await Jimp.read(buffer);
-      const outpath = "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
+      const outpath:string = "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
       await photo
         .resize(256, 256) // resize
         .quality(60) // set JPEG quality
@@ -28,7 +28,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
           resolve(__dirname + outpath);
         });
     } catch (error) {
-      reject(error);
+      throw error;
     }
   });
 }
