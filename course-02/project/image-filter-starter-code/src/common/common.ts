@@ -21,7 +21,7 @@ export class Common {
             message = "Image url is required.";
         } else {
             // input url was not correct
-            const regex = /^https?:\/\/[\w/:%#\$&\?\(\)~\.=\+\-]+$/
+            const regex = /^https?:\/\/[\w\W^<>\r\n]+[.jpg]$/
 
             if (!regex.test(inputURL)) {
                 returnCode = -1;
