@@ -36,7 +36,7 @@ import { Result } from './common/result';
 
   // Root Endpoint
   // Displays a simple message to the user
-  app.get("/", async (req, res) => {
+  app.get("/", async (req: express.Request, res: express.Response) => {
     res.send("try GET /filteredimage?image_url={{}}")
   });
 
@@ -48,7 +48,7 @@ import { Result } from './common/result';
   });
 
   // Implement filter image
-  app.get("/filteredimage/", (req, res) => {
+  app.get("/filteredimage/", (req:express.Request, res:express.Response) => {
 
     try {
       // Get query parameters 
